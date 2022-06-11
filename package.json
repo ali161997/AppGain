@@ -17,5 +17,8 @@
     "mongodb": "^4.7.0",
     "mongoose": "^6.3.6",
     "randomstring": "^1.2.2"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1"
   }
 }
