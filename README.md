@@ -1,91 +1,44 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p>
+# appgain Shortner
 
-<h3 align="center">appgain</h3>
-
-<div align="center">
-
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-
-</div>
-
----
-
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
-
-## 📝 Table of Contents
+## Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
 - [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
-## 🧐 About <a name = "about"></a>
+## About <a name = "about"></a>
 
-Implement a simple api for smart link shortener service,
-a link shortener service like bit.ly, goo.gl and many others.
-with different redirection ‘destination’ URL/Link based on the users platform
-for example if the short link if a short
-link is opened for desktop web browser
-it will redirect to one location but if open for mobile Android for have a different location.
+Link Shortner App 🔗:Implement a RESTful API for the shortlinks App,
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## Getting Started <a name = "getting_started"></a>
 
--git clone https://github.com/ali161997/AppGain.git
--browse to Project Directory
--npm install
--npm start
+- Hosted By Heroku <https://appgain.herokuapp.com/>
+- MongDB located In <https://cloud.mongodb.com/v2/6116f8669dd0175a60967c18#clusters>
+- Postman Testing Docs <https://documenter.getpostman.com/view/17093768/Uz5NjDLU>
+
+# You get Link Shortner App By
+
+- cloning App from github
+- create .env File and Add MongoDb Connection String
+- install npm packages
+- run command npm start
 
 ### Prerequisites
 
-Intall Nodejs v16.14.2
-Install NPM 8.5.0
+What things you need to install the software and how to install them.
+
+- nodejs enviromnmet Running
+- Node Package Manager npm installed
+- mongo Server running on local machine
+- postman for testing APIs
 
 ### Installing
 
-### And coding style tests
+- install node and NPM from <https://nodejs.org/en/download/>
+- install packeges from package.json file via npm insyall
+- install mongo server
 
-Explain what these tests test and why
+## Usage <a name = "usage"></a>
 
-```
-Give an example
-```
-
-## 🎈 Usage <a name="usage"></a>
-
-Add notes about how to use the system.
-
-## 🚀 Deployment <a name = "deployment"></a>
-
-</br>
-Deployed to Heroku
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
-
-## ✍️ Authors <a name = "authors"></a>
-
-- [@alihashem](https://github.com/ali161997) - Idea & Initial work
-
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
-
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- Postman for Shortner Docs for How to use It <https://documenter.getpostman.com/view/17093768/Uz5NjDLU>

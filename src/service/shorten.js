@@ -15,21 +15,15 @@ exports.getAllSlugs = async (req, res) => {
 
 exports.createShortener = async (req, res) => {
   try {
-    if (!req.body.slug) {
-      req.body.slug = generateRandomShortenLink();
-      let found = await Shortner.find({ slug: req.body.slug }).exec();
-      while (found.length > 0) {
-        req.body.slug = generateRandomShortenLink();
-        found = await Shortner.find({ slug: req.body.slug }).exec();
-      }
-    }
+    req.body.slug = !req.body.slug ? await generateNewSlug() : req.body.slug;
     const shortener = new Shortner(req.body);
     const ShortenSaved = await shortener.save();
     res.status(StatusCodes.CREATED).send(ShortenSaved);
   } catch (error) {
     if (error.code && error.code === 11000) {
-      message = 'duplicate Slug Error';
-      res.status(StatusCodes.NOT_ACCEPTABLE).send({ message });
+      res
+        .status(StatusCodes.NOT_ACCEPTABLE)
+        .send({ message: 'duplicate Slug Error' });
     } else {
       res.status(StatusCodes.BAD_REQUEST).send({ message: error.message });
     }
@@ -44,8 +38,21 @@ exports.UpdateShortner = async (req, res) => {
       new: true,
       runValidators: true,
     });
-    res.status(StatusCodes.OK).send(result);
+    !result
+      ? res
+          .status(StatusCodes.NOT_FOUND)
+          .send({ message: ` ${slug} Not Found` })
+      : res.status(StatusCodes.OK).send(result);
   } catch (error) {
     res.status(StatusCodes.NOT_ACCEPTABLE).send(error.message);
   }
 };
+async function generateNewSlug() {
+  let slug = generateRandomShortenLink();
+  let found = await Shortner.find({ slug }).exec();
+  while (found.length > 0) {
+    slug = generateRandomShortenLink();
+    found = await Shortner.find({ slug }).exec();
+  }
+  return slug;
+}
